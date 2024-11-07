@@ -1,0 +1,14 @@
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\bin\Debug\net8.0\gestiondette.exe
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\bin\Debug\net8.0\gestiondette.deps.json
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\bin\Debug\net8.0\gestiondette.runtimeconfig.json
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\bin\Debug\net8.0\gestiondette.dll
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\bin\Debug\net8.0\gestiondette.pdb
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\gestiondette.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\gestiondette.AssemblyInfoInputs.cache
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\gestiondette.AssemblyInfo.cs
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\gestiondette.csproj.CoreCompileInputs.cache
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\gestiondette.dll
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\refint\gestiondette.dll
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\gestiondette.pdb
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\gestiondette.genruntimeconfig.cache
+C:\Users\Booba\Documents\java2\ges_dette\gestiondette\obj\Debug\net8.0\ref\gestiondette.dll
