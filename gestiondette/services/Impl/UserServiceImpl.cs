@@ -26,6 +26,7 @@ namespace gestiondette.Services.Impl
 
         public void Save(User user)
         {
+            user.CreateAt = DateTime.Now;
             userRepository.Insert(user);
         }
 
@@ -36,6 +37,7 @@ namespace gestiondette.Services.Impl
 
         public void Update(User user)
         {
+            user.UpdateAt = DateTime.Now;
             userRepository.Update(user);
         }
 

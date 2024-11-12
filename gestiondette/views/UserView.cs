@@ -22,6 +22,8 @@ namespace gestiondette.views
             Console.WriteLine("Saisir l'email ");
             user.Login = Console.ReadLine();
 
+            user.Email = user.Login;
+
             Console.WriteLine("Saisir le login ");
             user.Login = Console.ReadLine();
 
@@ -50,7 +52,7 @@ namespace gestiondette.views
 
             Console.WriteLine("Saisir le login ");
             user.Login = Console.ReadLine();
-
+            user.Email = "nanoa";
             Console.WriteLine("Saisir le mot de passe ");
             user.Password = Console.ReadLine();
             user.State = true;

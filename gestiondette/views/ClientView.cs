@@ -33,7 +33,7 @@ namespace gestiondette.views
                 client.User = user;
                 user.Client = client;
 
-                userService.Save(user);
+                // userService.Save(user);
             }
 
             return client;

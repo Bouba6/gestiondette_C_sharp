@@ -25,6 +25,7 @@ namespace gestiondette.Services.Impl
 
         public void Save(DetailDette detailDette)
         {
+            detailDette.CreateAt = DateTime.Now;
             detailrepo.Insert(detailDette);
         }
 
@@ -35,6 +36,7 @@ namespace gestiondette.Services.Impl
 
         public void Update(DetailDette detailDette)
         {
+            detailDette.UpdateAt = DateTime.Now;
             detailrepo.Update(detailDette);
         }
     }

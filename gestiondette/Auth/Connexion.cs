@@ -29,7 +29,7 @@ namespace gestiondette.Auth
                 Console.WriteLine("Invalid login or password.");
                 return null;
             }
-
+            Console.WriteLine(user.Role);
             Console.WriteLine($"Welcome {user.Login}!");
             return user;
         }

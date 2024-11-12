@@ -25,6 +25,12 @@ namespace gestiondette.Services.Impl
 
         public void Save(Client client)
         {
+            Console.WriteLine(client);
+            if (client == null)
+            {
+                Console.WriteLine("c'est nulle");
+            }
+            client?.OnPrePersist();
             clientRepository.Insert(client);
         }
 

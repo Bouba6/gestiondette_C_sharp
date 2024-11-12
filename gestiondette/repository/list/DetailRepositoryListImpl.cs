@@ -13,12 +13,7 @@ namespace gestiondette.Repository.List
         }
         public DetailDette SelectById(int id)
         {
-            foreach (var detailDette in detailDettes)
-            {
-                if (detailDette.Id == id)
-                    return detailDette;
-            }
-            return null;
+            return detailDettes.Find(d => d.Id == id)!;
         }
         public void Insert(DetailDette detailDette)
         {
@@ -32,7 +27,7 @@ namespace gestiondette.Repository.List
         }
         public void Delete(int id)
         {
-            DetailDette clientToRemove = detailDettes.Find(cl => cl.Id == id);
+            DetailDette clientToRemove = detailDettes.Find(cl => cl.Id == id)!;
             if (clientToRemove != null)
                 detailDettes.Remove(clientToRemove);
         }

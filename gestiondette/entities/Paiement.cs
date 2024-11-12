@@ -1,9 +1,9 @@
 
 namespace gestiondette.entities
 {
-    public class Paiement
+    public class Paiement : AbstractEntity
     {
-        private int id;
+
 
         private double montant;
 
@@ -12,7 +12,7 @@ namespace gestiondette.entities
         private Dette dette;
 
 
-        public int Id { get => id; set => id = value; }
+
         public double Montant { get => montant; set => montant = value; }
         public DateTime DatePaiement { get => datePaiement; set => datePaiement = value; }
 
@@ -26,7 +26,7 @@ namespace gestiondette.entities
         public override string ToString()
         {
             return "Client[" +
-                    "id=" + id +
+                    "id=" + Id +
                     ", montant='" + montant + '\'' +
                     ", date='" + datePaiement + '\'';
         }

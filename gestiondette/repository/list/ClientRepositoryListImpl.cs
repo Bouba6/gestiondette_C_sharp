@@ -30,6 +30,12 @@ namespace gestiondette.Repository.List
             if (position != -1)
                 clients[position] = client;
         }
+        /*************  ✨ Codeium Command ⭐  *************/
+        /// <summary>
+        /// Delete a client by its ID
+        /// </summary>
+        /// <param name="id">The ID of the client to delete</param>
+        /******  ce3ffc2e-ef61-48e3-9285-ba7f52fbcf75  *******/
         public void Delete(int id)
         {
             Client clientToRemove = clients.Find(cl => cl.Id == id);

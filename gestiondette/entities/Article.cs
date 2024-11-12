@@ -1,38 +1,21 @@
 namespace gestiondette.entities
 {
-    public class Article
+    public class Article : AbstractEntity
     {
-        private int id;
-        private String libelle;
 
-        private double prix;
-
-        private double qteStock;
-
-
-        private static int count;
-
-        public Article()
-        {
-            count++;
-            id = count;
-        }
-
-
-        public int Id { get => id; set => id = value; }
-        public string Libelle { get => libelle; set => libelle = value; }
-        public double Prix { get => prix; set => prix = value; }
-        public double QteStock { get => qteStock; set => qteStock = value; }
+        public string? Libelle { get; set; }
+        public double Prix { get; set; }
+        public double QteStock { get; set; }
 
 
 
         public override string ToString()
         {
             return "Client[" +
-                    "id=" + id +
-                    ", libelle='" + libelle + '\'' +
-                    ", prix='" + prix + '\'' +
-                    ", qteStock='" + qteStock + ']';
+                    "id=" + Id +
+                    ", libelle='" + Libelle + '\'' +
+                    ", prix='" + Prix + '\'' +
+                    ", qteStock='" + QteStock + ']';
 
         }
 

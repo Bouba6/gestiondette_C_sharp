@@ -28,6 +28,7 @@ namespace gestiondette.Services.Impl
         {
             if (dette != null)
             {
+                dette.CreateAt = DateTime.Now;
                 repoDette.Insert(dette);
             }
             Console.WriteLine("dette non enregistrée");
@@ -41,6 +42,7 @@ namespace gestiondette.Services.Impl
 
         public void Update(Dette dette)
         {
+            dette.UpdateAt = DateTime.Now;
             repoDette.Update(dette);
         }
 

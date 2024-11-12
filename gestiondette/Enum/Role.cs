@@ -1,8 +1,18 @@
 namespace gestiondette.Enum
 {
-    public enum Role {
-        BOUTIQUIER,
+    public enum Role
+    {
         ADMIN,
-        CLIENT
+        CLIENT,
+        BOUTIQUIER,
+
+
+    }
+    public class RoleHelper
+    {
+        public static Array GetRoles()
+        {
+            return Role.GetValues(typeof(Role));
+        }
     }
 }

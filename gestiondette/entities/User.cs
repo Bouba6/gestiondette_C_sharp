@@ -1,49 +1,43 @@
 
+using System.ComponentModel.DataAnnotations.Schema;
 using gestiondette.Enum;
 
 namespace gestiondette.entities
 {
-    public class User
+    public class User : AbstractEntity
     {
-        private int id;
 
-        private string login;
-
-        private string password;
-
-        private Role role;
-
-
-        private Client client;
-
-        private static int count;
 
         private bool state;
 
         public User()
         {
-            count++;
-            id = count;
+
             state = true;
         }
 
-        public int Id { get => id; set => id = value; }
-        public string Login { get => login; set => login = value; }
-        public string Password { get => password; set => password = value; }
-        public Role Role { get => role; set => role = value; }
 
-        public Client Client { get => client; set => client = value; }
+        public string Login { get; set; }
+        public string Email { get; set; }
+
+        public string Password { get; set; }
+        public Role Role { get; set; }
+
+        [NotMapped]
+        public Client Client { get; set; }
+
+
         public bool State { get => state; set => state = value; }
 
 
 
         public override string ToString()
         {
-            return "Client[" +
-                    "id=" + id +
-                    ", login='" + login + '\'' +
-                    ", password='" + password + '\'' +
-                    ", role=" + role +
+            return "User[" +
+                    "id=" + Id +
+                    ", login='" + Login + '\'' +
+                    ", password='" + Password + '\'' +
+                    ", role=" + Role +
                     ']';
 
         }

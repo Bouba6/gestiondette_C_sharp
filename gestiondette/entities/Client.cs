@@ -1,36 +1,27 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace gestiondette.entities
 {
-    public class Client
+    public class Client : AbstractEntity
     {
-        private int id;
-        private String surnom;
-        private String telephone;
-        private String adresse;
 
-        private User user;
-
-        private double solde;
-
-        private List<Dette> listDette = [];
-
-        private static int count;
-
-        public Client()
-        {
-            count++;
-            id = count;
-        }
+        private readonly List<Dette> listDette = [];
 
 
-        public int Id { get => id; set => id = value; }
-        public string Surnom { get => surnom; set => surnom = value; }
-        public string Telephone { get => telephone; set => telephone = value; }
-        public string Adresse { get => adresse; set => adresse = value; }
 
-        public double Solde { get => solde; set => solde = value; }
-        public User User { get => user; set => user = value; }
+        public string? Surnom { get; set; }
+        public string? Telephone { get; set; }
+        public string? Adresse { get; set; }
+
+        public double Solde { get; set; }
+
+
+
+        public User? User { get; set; }
 
         public Dette ListDette { get => ListDette; }
+
+
 
         public void setDette(Dette dette)
         {
@@ -42,23 +33,13 @@ namespace gestiondette.entities
         public override string ToString()
         {
             return "Client[" +
-                    "id=" + id +
-                    ", surnom='" + surnom + '\'' +
-                    ", telephone='" + telephone + '\'' +
-                    ", adresse='" + adresse + ']';
+                    "id=" + Id +
+                    ", surnom='" + Surnom + '\'' +
+                    ", telephone='" + Telephone + '\'' +
+                    ", adresse='" + Adresse + ']';
 
         }
 
-        public bool equals(Client other)
-        {
-            if (this == other) return true;
-            if (other == null) return false;
-            Client client = (Client)other;
-            return id == client.id &&
-                    Object.Equals(surnom, client.surnom) &&
-                    Object.Equals(telephone, client.telephone) &&
-                    Object.Equals(adresse, client.adresse);
 
-        }
     }
 }

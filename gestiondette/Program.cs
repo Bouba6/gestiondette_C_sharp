@@ -9,6 +9,9 @@ using gestiondette.Enum;
 
 using gestiondette.Controller;
 using gestiondette.Auth;
+using gestiondette.Repository.Bd;
+using gestiondette.core;
+using gestiondette.core.Factory;
 
 namespace Cours
 {
@@ -16,13 +19,15 @@ namespace Cours
     {
         public static void Main(string[] args)
         {
+            Persistence persistence = Persistence.Bd1;
             // Initialisation des services
-            IUserRepository userRepository = new UserRepositoryListImpl();
-            IdetteRepositorie detteRepositorie = new DetteRepositoryListImpl();
-            IArticleRepository articleRepository = new ArticleRepositoryListImpl();
-            IdetailRepository detailRepository = new DetailRepositoryListImpl();
-            IClientRepository clientRepository = new ClientRepositoryListImpl();
-            IPaiementRepository paiementRepository = new PaiementRepositoryListImpl();
+            IdetailRepository detailRepository = (IdetailRepository)FactoryRepo<DetailDette>.CreateRepository(persistence);
+            IArticleRepository articleRepository = (IArticleRepository)FactoryRepo<Article>.CreateRepository(persistence);
+            IdetteRepositorie detteRepositorie = (IdetteRepositorie)FactoryRepo<Dette>.CreateRepository(persistence);
+            IUserRepository userRepository = (IUserRepository)FactoryRepo<User>.CreateRepository(persistence);
+            IPaiementRepository paiementRepository = (IPaiementRepository)FactoryRepo<Paiement>.CreateRepository(persistence);
+            IClientRepository clientRepository = (IClientRepository)FactoryRepo<Client>.CreateRepository(persistence);
+
 
 
             IdetailService detailService = new DetailServiceImpl(detailRepository);
@@ -40,40 +45,48 @@ namespace Cours
             PaiementView paiementView = new PaiementView(clientService, detteService);
             ArticleView articleView = new ArticleView(articleService);
 
-            int choice;
-            User user1 = new User();
-            User user2 = new User();
-            User user3 = new User();
-            Client client1 = new Client();
-            user2.Login = "admin";
-            user2.Password = "admin";
-            user2.Role = Role.ADMIN;
+            // int choice;
+            // User user1 = new User();
+            // User user2 = new User();
+            // User user3 = new User();
+            // Client client1 = new Client();
+            // user2.Login = "admin";
+            // user2.Password = "admin";
+            // user2.Role = Role.ADMIN;
 
-            userService.Save(user2);
+            // userService.Save(user2);
 
-            user1.Login = "boutiquier";
-            user1.Password = "boutiquier";
-            user1.Role = Role.BOUTIQUIER;
-            userService.Save(user1);
+            // user1.Login = "boutiquier";
+            // user1.Password = "boutiquier";
+            // user1.Role = Role.BOUTIQUIER;
+            // userService.Save(user1);
 
-            user3.Login = "client";
-            user3.Password = "client";
-            client1.Surnom = "client";
-            client1.Telephone = "776404098";
-            client1.Adresse = "addresse";
-            user3.Client = client1;
-            client1.User = user3;
-            user3.Role = Role.CLIENT;
-            clientService.Save(client1);
-            userService.Save(user3);
+            // user3.Login = "client";
+            // user3.Password = "client";
+            // client1.Surnom = "client";
+            // client1.Telephone = "776404098";
+            // client1.Adresse = "addresse";
+            // user3.Client = client1;
+            // client1.User = user3;
+            // user3.Role = Role.CLIENT;
+            // clientService.Save(client1);
+            // userService.Save(user3);
+
+            // clientView.afficher(clientService.FindAll());
+            // Console.WriteLine("c'est la liste des utilisateurs");
+            // userView.afficher(userService.FindAll());
+            // Console.WriteLine("c'est la liste des utilisateurs");
 
             int output = 0;
             do
             {
+                // userService.Save(userView.Saisie());
+                // clientService.Save(clientView.Saisie());
+                // clientView.afficher(clientService.FindAll());
                 Connexion connection = new Connexion(userService);
                 User user = connection.connexion();
-                userView.afficher(userService.FindAll());
-                Console.WriteLine(user);
+                // userView.afficher(userService.FindAll());
+
 
                 if (user != null)
                 {

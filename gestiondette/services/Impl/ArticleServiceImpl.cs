@@ -25,6 +25,7 @@ namespace gestiondette.Services.Impl
 
         public void Save(Article article)
         {
+            article.CreateAt = DateTime.Now;
             articleRepository.Insert(article);
         }
 
